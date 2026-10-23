@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Battle: Digital Card Game</title>
+    <meta name="description" content="Nexus Battle — a real-time multiplayer card battle game. Choose your hero, battle your friends and become the ultimate card master!">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+
+<body>
+    <div class="animated-bg" id="animated-bg">
+        <canvas id="ben10-bg-canvas"></canvas>
+        <div class="omnitrix-radial-glow"></div>
+        <div class="ben10-hex-grid"></div>
+        <div class="omnitrix-watermark">
+            <svg viewBox="0 0 100 100" class="omnitrix-svg">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="#00ff41" stroke-width="3" opacity="0.5"/>
+                <circle cx="50" cy="50" r="38" fill="#031508" stroke="#00ff41" stroke-width="2" opacity="0.8"/>
+                <!-- Hourglass Top Triangle -->
+                <polygon points="25,20 75,20 50,48" fill="#00ff41" opacity="0.9"/>
+                <!-- Hourglass Bottom Triangle -->
+                <polygon points="25,80 75,80 50,52" fill="#00ff41" opacity="0.9"/>
+                <!-- Central Core Orb -->
+                <circle cx="50" cy="50" r="7" fill="#ccff00" stroke="#003b0f" stroke-width="1.5"/>
+            </svg>
+        </div>
+        <div class="omnitrix-energy-ring"></div>
+        <div class="omnitrix-energy-ring ring-delay"></div>
+        <div class="ben10-scanline"></div>
+    </div>
+
+    <!-- SVG 4K ULTRA SHARPEN & ENHANCEMENT FILTER -->
+    <svg style="position: absolute; width: 0; height: 0; pointer-events: none; overflow: hidden;" aria-hidden="true">
+        <defs>
+            <filter id="ultra4k-sharpen" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+                <feConvolveMatrix order="3" kernelMatrix="0 -0.45 0  -0.45 2.8 -0.45  0 -0.45 0" preserveAlpha="true" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- REJOIN BANNER (shown if localStorage has a saved session) -->
+    <div id="rejoin-banner" class="rejoin-banner hidden">
+        <div class="rejoin-banner-inner">
+            <div class="rejoin-icon">⚡</div>
+            <div class="rejoin-info">
+                <div class="rejoin-title">Resume Your Battle</div>
+                <div class="rejoin-detail">
+                    Room <strong id="rejoin-room-code-display"></strong> · Player: <strong id="rejoin-player-name-display"></strong>
+                </div>
+            </div>
+            <div class="rejoin-actions">
+                <button id="btn-rejoin" class="btn glow-btn small-btn">↩ Rejoin</button>
+                <button id="btn-clear-session" class="btn text-btn small-btn">✕ Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOBBY WRAPPER -->
+    <div id="lobby-wrapper" class="lobby-container glass-card">
+        <h1 class="game-title">Nexus Battle</h1>
+        <p class="subtitle">Enter the Multiverse of Cards</p>
+
+        <div id="join-section">
+            <input type="text" id="player-name" class="glass-input" placeholder="Enter Your Name (Required)">
+            <div class="action-buttons">
+                <button id="btn-create-room" class="btn primary-btn">Create Room</button>
+                <div class="divider"><span>OR</span></div>
+                <input type="text" id="room-code-input" class="glass-input small" placeholder="Enter Room Link / Code">
+                <button id="btn-join-room" class="btn secondary-btn">Join Room</button>
+            </div>
+            <p id="error-message" class="error-text hidden"></p>
+        </div>
+
+        <div id="create-room-details" class="hidden">
+            <!-- 1. SELECT CONCEPT -->
+            <div class="room-config-section">
+                <div class="config-section-header">
+                    <span class="config-num">1</span>
+                    <h3 class="config-title">Select Concept Deck</h3>
+                </div>
+                <div class="concept-selector">
+                    <div class="concept-card active" data-concept="ben10">
+                        <div class="concept-icon-wrap concept-ben10">
+                            <img src="/images/aliens/heatblast.png" alt="Ben 10" class="concept-img" onerror="this.src='/images/aliens/alien_x.png'">
+                            <div class="concept-glow-ring"></div>
+                        </div>
+                        <div class="concept-meta">
+                            <span class="concept-title">Ben 10</span>
+                            <span class="concept-sub">59 Aliens</span>
+                        </div>
+                        <div class="concept-check">✓</div>
+                    </div>
+                    <div class="concept-card teaser-card" data-concept="avengers" title="Click to view Avengers teaser">
+                        <div class="concept-icon-wrap concept-avengers">
+                            <img src="/images/avengers/avengers_1.jpg" alt="Avengers" class="concept-img">
+                            <div class="concept-glow-ring"></div>
+                            <span class="concept-soon-badge">SOON</span>
+                        </div>
+                        <div class="concept-meta">
+                            <span class="concept-title">Avengers</span>
+                            <span class="concept-sub">Earth's Mightiest</span>
+                        </div>
+                        <div class="concept-check">✓</div>
+                    </div>
+                    <div class="concept-card teaser-card" data-concept="cricket" title="Click to view Cricket teaser">
+                        <div class="concept-icon-wrap concept-cricket">
+                            <img src="/images/cricket/cricket_1.jpg" alt="Cricket" class="concept-img">
+                            <div class="concept-glow-ring"></div>
+                            <span class="concept-soon-badge">SOON</span>
+                        </div>
+                        <div class="concept-meta">
+                            <span class="concept-title">Cricket</span>
+                            <span class="concept-sub">World Legends</span>
+                        </div>
+                        <div class="concept-check">✓</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. CARDS PER PLAYER CONFIG -->
+            <div class="room-config-section">
+                <div class="config-section-header">
+                    <span class="config-num">2</span>
+                    <h3 class="config-title">Hand Size / Cards Per Player</h3>
+                    <span class="config-hint-tag" id="cards-selected-hint">10 Cards</span>
+                </div>
+                <div class="config-chips-group pill-group" id="cards-per-player-chips">
+                    <button type="button" class="config-chip pill-chip" data-cards="5">
+                        <span class="chip-main">5</span>
+                        <span class="chip-sub">Quick</span>
+                    </button>
+                    <button type="button" class="config-chip pill-chip active" data-cards="10">
+                        <span class="chip-main">10</span>
+                        <span class="chip-sub">Standard</span>
+                    </button>
+                    <button type="button" class="config-chip pill-chip" data-cards="15">
+                        <span class="chip-main">15</span>
+                        <span class="chip-sub">Extended</span>
+                    </button>
+                    <button type="button" class="config-chip pill-chip" data-cards="20">
+                        <span class="chip-main">20</span>
+                        <span class="chip-sub">Epic</span>
+                    </button>
+                    <button type="button" class="config-chip pill-chip" data-cards="0">
+                        <span class="chip-main">All</span>
+                        <span class="chip-sub">Full Deck</span>
+                    </button>
+                </div>
+                <div class="custom-input-row">
+                    <span class="custom-input-label">Custom Hand Size:</span>
+                    <input type="number" id="custom-cards-input" class="glass-input-compact" placeholder="e.g. 8" min="1" max="50">
+                </div>
+            </div>
+
+            <!-- 3. GAME MODE & ROUNDS CONFIG -->
+            <div class="room-config-section">
+                <div class="config-section-header">
+                    <span class="config-num">3</span>
+                    <h3 class="config-title">Win Condition & Game Mode</h3>
+                    <span class="config-hint-tag" id="mode-selected-hint">50 Rounds</span>
+                </div>
+                <div class="config-chips-group mode-grid" id="game-mode-chips">
+                    <button type="button" class="config-chip mode-card" data-rounds="0">
+                        <div class="mode-icon">⚔️</div>
+                        <div class="mode-text-group">
+                            <span class="chip-main">Classic Elimination</span>
+                            <span class="chip-sub">Capture all cards to win</span>
+                        </div>
+                    </button>
+                    <button type="button" class="config-chip mode-card" data-rounds="20">
+                        <div class="mode-icon">⚡</div>
+                        <div class="mode-text-group">
+                            <span class="chip-main">20 Rounds Battle</span>
+                            <span class="chip-sub">Top cards at Rd 20 wins</span>
+                        </div>
+                    </button>
+                    <button type="button" class="config-chip mode-card active" data-rounds="50">
+                        <div class="mode-icon">🏆</div>
+                        <div class="mode-text-group">
+                            <span class="chip-main">50 Rounds Tournament</span>
+                            <span class="chip-sub">Top cards at Rd 50 wins</span>
+                        </div>
+                    </button>
+                    <button type="button" class="config-chip mode-card" data-rounds="100">
+                        <div class="mode-icon">👑</div>
+                        <div class="mode-text-group">
+                            <span class="chip-main">100 Rounds Grand Slam</span>
+                            <span class="chip-sub">Top cards at Rd 100 wins</span>
+                        </div>
+                    </button>
+                </div>
+                <div class="custom-input-row">
+                    <span class="custom-input-label">Custom Round Target:</span>
+                    <input type="number" id="custom-rounds-input" class="glass-input-compact" placeholder="e.g. 30" min="5" max="500">
+                </div>
+            </div>
+
+            <div class="create-room-actions">
+                <button id="btn-generate-lobby" class="btn glow-btn hero-action-btn">⚡ Create Battle Room</button>
+                <button id="btn-back-create" class="btn text-btn back-action-btn">← Back to Menu</button>
+            </div>
+        </div>
+
+        <div id="lobby-wait" class="hidden">
+            <h2 class="room-title">Room Code: <span id="display-room-code" class="highlight">ABCD</span></h2>
+            <p class="share-text">Share the code or link with your friends to join.</p>
+            <button class="btn small-btn outline-btn" id="btn-copy-link">Copy Invite Link</button>
+
+            <!-- LOBBY RULES & SETTINGS PREVIEW CARD -->
+            <div class="lobby-rules-card" id="lobby-rules-card">
+                <div class="lobby-rules-header">
+                    <span class="rules-icon">📜</span>
+                    <span class="rules-title">Active Match Rules</span>
+                </div>
+                <div class="lobby-rules-grid">
+                    <div class="rule-item">
+                        <span class="rule-label">Theme</span>
+                        <span class="rule-val highlight" id="lobby-theme-val">Ben 10</span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-label">Hand Size</span>
+                        <span class="rule-val highlight" id="lobby-cards-val">10 Cards / Player</span>
+                    </div>
+                    <div class="rule-item full-width">
+                        <span class="rule-label">Win Condition</span>
+                        <span class="rule-val highlight-mode" id="lobby-mode-val">50 Rounds (Player with most cards at Rd 50 wins)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="players-list-container">
+                <h3 class="section-title">Players Joined: <span id="player-count">0</span></h3>
+                <ul id="players-list"></ul>
+            </div>
+            <p id="lobby-status-msg" class="status-text">Waiting for host to start...</p>
+            <button id="btn-start-game" class="btn glow-btn disabled" disabled>Start Game</button>
+        </div>
+    </div>
+
+    <!-- SHUFFLE ANIMATION OVERLAY -->
+    <div id="shuffle-overlay" class="shuffle-overlay hidden">
+        <div class="shuffle-stage">
+            <h2 class="shuffle-title" id="shuffle-title">SHUFFLING DECK</h2>
+            <div class="shuffle-deck-area" id="shuffle-deck-area">
+                <!-- Cards will be dynamically created by JS -->
+            </div>
+            <p class="shuffle-subtitle" id="shuffle-subtitle">Preparing your battle cards...</p>
+        </div>
+    </div>
+
+    <!-- GAME WRAPPER -->
+    <div class="game-container hidden" id="game-container">
+
+        <!-- Top bar -->
+        <div class="game-header-bar">
+            <div class="my-info">
+                <h3>My Deck: <span id="my-card-count" class="highlight">0</span> cards</h3>
+                <h4 id="turn-indicator" class="turn-indicator">Waiting for others...</h4>
+            </div>
+
+            <!-- IN-GAME HUD ACTIVE MODE & RULES BUTTON -->
+            <button id="btn-game-rules-modal" class="game-mode-hud-pill" title="Click to view full match rules">
+                <span class="hud-mode-icon">⚔️</span>
+                <span class="hud-mode-text" id="hud-mode-text">50 Rounds Mode</span>
+                <span class="hud-rules-btn-tag">ℹ️ Rules</span>
+            </button>
+
+            <div class="round-counter-pill">
+                <span class="round-label">ROUND</span>
+                <span id="current-round-number" class="round-value">1</span>
+                <span id="round-limit-denominator" class="round-denominator hidden">/ 50</span>
+                <span class="round-sub" id="round-milestone-hint">(Next Leaderboard: Rd 10)</span>
+            </div>
+        </div>
+
+        <!-- Main play area -->
+        <div class="game-play-area">
+
+            <!-- Center: your active premium card -->
+            <div id="player-section" class="player-section">
+                <div id="my-active-card" class="nexus-card">
+
+                    <!-- Background character art -->
+                    <div class="card-art-bg">
+                        <img id="card-image" src="" alt="Card Art" class="card-art-img">
+                        <div class="card-art-overlay"></div>
+                    </div>
+
+                    <!-- Animated particles layer -->
+                    <div class="card-particles" id="card-particles"></div>
+
+                    <!-- TOP ROW: Rank + 4K Badge + Series -->
+                    <div class="card-top-row">
+                        <div class="rank-block">
+                            <div class="rank-num-row">
+                                <span class="rank-number" id="card-rank">01</span>
+                                <div class="omnitrix-badge"></div>
+                            </div>
+                            <span class="rank-label">RANK</span>
+                        </div>
+                        <div class="card-4k-badge">
+                            <span class="badge-4k-glow">✦</span>
+                            <span class="badge-4k-text">4K ULTRA HD</span>
+                        </div>
+                        <div class="series-block">
+                            <span class="hero-alien-label">HERO ALIEN</span>
+                            <div class="series-name-row">
+                                <span class="series-title" id="card-series">BEN 10</span>
+                                <div class="omnitrix-badge series-badge"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LEFT SIDE: Stats column -->
+                    <div class="card-stats-col" id="card-stats">
+                        <!-- Injected by JS -->
+                    </div>
+
+                    <!-- BOTTOM SECTION -->
+                    <div class="card-bottom-section">
+
+                        <!-- Name bar -->
+                        <div class="name-bar">
+                            <div class="name-icon" id="card-element-icon">🔥</div>
+                            <div class="name-text-group">
+                                <h2 class="alien-name" id="card-name">HEATBLAST</h2>
+                                <span class="alien-type" id="card-type">PYRONITE ALIEN</span>
+                            </div>
+                        </div>
+
+                        <!-- Description + Flavor -->
+                        <div class="card-desc-box">
+                            <p id="card-desc" class="card-desc-text"></p>
+                            <p id="card-flavor" class="card-flavor-text"></p>
+                        </div>
+
+                        <!-- Abilities row -->
+                        <div class="abilities-row">
+                            <!-- Ability -->
+                            <div class="ability-block neon-box">
+                                <div class="ability-label-tag">ABILITY</div>
+                                <div class="ability-header">
+                                    <div class="ability-icon" id="ability-icon">🛡️</div>
+                                    <span class="ability-name" id="card-ability-name">FIRE PROOF</span>
+                                </div>
+                                <p id="card-ability-desc" class="ability-desc"></p>
+                            </div>
+
+                            <!-- Omnitrix center -->
+                            <div class="omnitrix-center">
+                                <div class="omnitrix-ring">
+                                    <div class="omnitrix-core-inner"></div>
+                                </div>
+                            </div>
+
+                            <!-- Special + Ultimate -->
+                            <div class="special-block neon-box">
+                                <div class="special-group">
+                                    <div class="ability-label-tag special-tag">SPECIAL MOVE</div>
+                                    <div class="ability-header">
+                                        <div class="ability-icon special-col" id="special-icon">🔥</div>
+                                        <span class="ability-name" id="card-special-name">INFERNO BLAST</span>
+                                    </div>
+                                    <p id="card-special-desc" class="ability-desc"></p>
+                                </div>
+                                <div class="ultimate-group">
+                                    <div class="ability-label-tag ultimate-tag">ULTIMATE</div>
+                                    <div class="ability-header">
+                                        <span class="ability-name" id="card-ultimate-name">SUPER NOVA</span>
+                                        <div class="ability-icon ult-col" id="ultimate-icon">💥</div>
+                                    </div>
+                                    <p id="card-ultimate-desc" class="ability-desc"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /card-bottom-section -->
+                </div><!-- /nexus-card -->
+
+                <!-- ELIMINATED OVERLAY (shown when player has no cards but game ongoing) -->
+                <div id="eliminated-overlay" class="eliminated-overlay hidden">
+                    <div class="eliminated-content">
+                        <div class="eliminated-skull">💀</div>
+                        <h2 class="eliminated-title">ELIMINATED</h2>
+                        <p class="eliminated-sub">You have no cards left.<br>Spectating the remaining battle...</p>
+                        <div class="eliminated-pulse-ring"></div>
+                    </div>
+                </div>
+
+            </div><!-- /player-section -->
+
+        </div><!-- /game-play-area -->
+
+        <!-- Bottom: Player's Deck -->
+        <div id="bottom-deck-panel" class="bottom-deck-panel">
+            <div class="deck-title">🎴 My Cards</div>
+            <div id="my-deck-list" class="my-deck-list">
+                <!-- populated by JS -->
+            </div>
+        </div>
+
+        <!-- Arena overlay -->
+        <div id="arena" class="arena hidden">
+            <h2 id="arena-title" class="arena-title highlight">Round Result</h2>
+            <div id="arena-cards" class="arena-cards"></div>
+            <h3 id="winner-text" class="winner-text game-title mt-1"></h3>
+            <button id="btn-break-tie" class="btn glow-btn mt-2 hidden"
+                style="max-width: 280px; margin: 1rem auto; background: linear-gradient(45deg, #ff8a00, #e52e71); box-shadow: 0 0 20px rgba(229, 46, 113, 0.6);">Break Tie: Pick Another Stat</button>
+            <button id="btn-next-round" class="btn glow-btn mt-2 hidden"
+                style="max-width: 200px; margin: 1rem auto;">Next Round →</button>
+        </div>
+
+        <!-- LEFT DOCK BUTTON: Toggle Players Roster (Rightward Arrow) -->
+        <button id="btn-toggle-players-drawer" class="hud-dock-btn hud-dock-left" aria-label="Toggle Players Panel" title="View Players & Status">
+            <span class="hud-dock-icon">👥</span>
+            <span class="hud-dock-arrow">▶</span>
+            <span id="dock-players-count-badge" class="hud-dock-badge">0</span>
+        </button>
+
+        <!-- LEFT PLAYERS ROSTER DRAWER -->
+        <aside id="players-drawer" class="hud-drawer hud-drawer-left">
+            <div class="hud-drawer-header">
+                <div class="hud-drawer-title-group">
+                    <div class="hud-drawer-badge">MULTIVERSE ROSTER</div>
+                    <h3 class="hud-drawer-title">Players &amp; Status</h3>
+                    <p class="hud-drawer-hint">Sorted by cards held (highest first)</p>
+                </div>
+                <button id="btn-close-players-drawer" class="hud-drawer-close-btn" title="Close Panel" aria-label="Close Players Panel">
+                    ◀
+                </button>
+            </div>
+
+            <div class="hud-drawer-body">
+                <div id="drawer-players-list" class="drawer-players-list">
+                    <!-- Populated dynamically by JS -->
+                </div>
+            </div>
+
+            <div class="hud-drawer-footer">
+                <div class="status-legend">
+                    <div class="legend-item"><span class="status-dot dot-online"></span> Online</div>
+                    <div class="legend-item"><span class="status-dot dot-offline"></span> Offline</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- RIGHT DOCK BUTTON: Toggle Battle Chat (Leftward Arrow) -->
+        <button id="btn-toggle-chat-drawer" class="hud-dock-btn hud-dock-right" aria-label="Toggle Battle Chat" title="Open Game Chat">
+            <span class="hud-dock-arrow">◀</span>
+            <span class="hud-dock-icon">💬</span>
+            <span id="dock-chat-unread-badge" class="hud-dock-badge unread-badge hidden">0</span>
+        </button>
+
+        <!-- RIGHT BATTLE CHAT DRAWER -->
+        <aside id="chat-drawer" class="hud-drawer hud-drawer-right">
+            <div class="hud-drawer-header">
+                <div class="hud-drawer-title-group">
+                    <div class="hud-drawer-badge">BATTLE COMMS</div>
+                    <h3 class="hud-drawer-title">Room Chat</h3>
+                    <p class="hud-drawer-hint">Real-time room broadcast</p>
+                </div>
+                <button id="btn-close-chat-drawer" class="hud-drawer-close-btn" title="Close Chat" aria-label="Close Chat Panel">
+                    ▶
+                </button>
+            </div>
+
+            <div class="hud-drawer-body chat-drawer-body">
+                <div id="chat-messages-container" class="chat-messages-container">
+                    <div class="chat-message-item chat-msg-system">
+                        <span class="chat-msg-system-text">⚡ Battle Comms connected. Chat with other players!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hud-drawer-footer chat-drawer-footer">
+                <form id="chat-form" class="chat-input-form" autocomplete="off">
+                    <input type="text" id="chat-input-text" class="chat-input-field" placeholder="Type your message..." maxlength="250" autocomplete="off">
+                    <button type="submit" id="btn-send-chat" class="chat-send-btn" title="Send message" aria-label="Send">
+                        <span>➤</span>
+                    </button>
+                </form>
+            </div>
+        </aside>
+
+        <!-- BACKDROP FOR MOBILE / OVERLAY CLICK -->
+        <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+
+        <!-- SOLO PLAYER / OPPONENTS OFFLINE MODAL -->
+        <div id="solo-prompt-modal" class="solo-modal-overlay hidden">
+            <div class="solo-modal-card glass-card">
+                <div class="solo-modal-icon">⏳</div>
+                <h2 class="solo-modal-title">Opponents Still Offline</h2>
+                <p class="solo-modal-desc">All other players are currently disconnected. Would you like to keep waiting for them to reconnect, or end the game now and crown the champion?</p>
+                <div class="solo-modal-actions">
+                    <button id="btn-solo-wait" class="btn secondary-btn solo-btn">
+                        <span>⏳ Wait (1 more minute)</span>
+                    </button>
+                    <button id="btn-solo-end" class="btn glow-btn solo-btn solo-end-btn">
+                        <span>🏆 End Game &amp; Declare Winner</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- IN-GAME MATCH RULES MODAL OVERLAY -->
+        <div id="rules-modal-overlay" class="solo-modal-overlay hidden">
+            <div class="rules-modal-card glass-card">
+                <div class="rules-modal-header">
+                    <div class="rules-modal-title-group">
+                        <span class="rules-modal-icon">📜</span>
+                        <h2 class="rules-modal-title">Active Match Rules</h2>
+                    </div>
+                    <button id="btn-close-rules-modal" class="rules-modal-close" aria-label="Close Rules">✕</button>
+                </div>
+                <div class="rules-modal-body">
+                    <div class="rules-highlight-box">
+                        <div class="rule-badge-row">
+                            <span class="rule-mode-badge" id="modal-rule-mode-tag">50 ROUNDS TOURNAMENT</span>
+                            <span class="rule-cards-badge" id="modal-rule-cards-tag">10 CARDS / PLAYER</span>
+                        </div>
+                        <p class="rule-win-summary" id="modal-rule-win-summary">
+                            🏆 <strong>Win Condition:</strong> The player holding the highest number of cards at the conclusion of <strong>Round 50</strong> is crowned the Multiverse Champion!
+                        </p>
+                    </div>
+
+                    <div class="rules-detail-list">
+                        <div class="rules-detail-item">
+                            <span class="detail-icon">⚡</span>
+                            <div class="detail-text">
+                                <strong>Turn &amp; Stat Pick:</strong> The player whose turn it is chooses their card's strongest stat (Attack, Speed, etc.). All active players reveal and compare their top card.
+                            </div>
+                        </div>
+                        <div class="rules-detail-item">
+                            <span class="detail-icon">🎴</span>
+                            <div class="detail-text">
+                                <strong>Winning a Round:</strong> The player with the highest stat wins everyone's top cards! Won cards go to the back of the winner's playable deck.
+                            </div>
+                        </div>
+                        <div class="rules-detail-item">
+                            <span class="detail-icon">⚔️</span>
+                            <div class="detail-text">
+                                <strong>Ties:</strong> If two or more players tie on a chosen stat, the active player must select a <em>different</em> stat on the same card to break the tie.
+                            </div>
+                        </div>
+                        <div class="rules-detail-item">
+                            <span class="detail-icon">👑</span>
+                            <div class="detail-text">
+                                <strong>Leaderboard Milestones:</strong> Every 10 rounds, the multiverse standings are spotlighted showing current leaders and won card tallies.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rules-modal-footer">
+                    <button id="btn-ack-rules" class="btn glow-btn small-btn">Got It! Return to Battle</button>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /game-container -->
+
+    <!-- FULLSCREEN CINEMATIC MILESTONE & LEADER PRESENTATION OVERLAY -->
+    <div id="leaderboard-overlay" class="cinema-overlay hidden">
+        
+        <!-- Full-screen Background Video -->
+        <div class="cinema-video-wrapper">
+            <video id="lb-video" class="cinema-video" playsinline muted preload="metadata">
+                <source id="lb-video-source" src="" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+            <!-- Vignette and cinematic scanlines/effects -->
+            <div class="cinema-vignette"></div>
+            <div class="cinema-glow-border"></div>
+        </div>
+
+        <!-- Cinema Top HUD (Active during cutscene) -->
+        <div class="cinema-hud-top" id="cinema-hud-top">
+            <div class="cinema-milestone-pill">
+                <span class="cinema-pulse-dot"></span>
+                <span id="lb-milestone-tag">ROUND 10 MILESTONE</span>
+            </div>
+            <div class="cinema-video-title-pill">
+                <span class="cinema-action-icon">⚔️</span>
+                <span id="lb-video-title">Alien Combat Action</span>
+            </div>
+            <div class="cinema-hud-actions">
+                <button id="btn-sound-toggle" class="cinema-hud-btn" type="button">🔊 Unmute</button>
+                <button id="btn-skip-video" class="cinema-hud-btn skip-btn" type="button">Skip to Leader ⏭</button>
+            </div>
+        </div>
+
+        <!-- Video Playback Progress Line -->
+        <div class="cinema-progress-container" id="cinema-progress-container">
+            <div class="cinema-progress-bar" id="cinema-progress-bar"></div>
+        </div>
+
+        <!-- LEADER PRESENTATION OVERLAY (revealed at last / when video completes) -->
+        <div id="lb-presentation" class="lb-presentation hidden">
+            <div class="lb-presentation-modal glass-card">
+                
+                <!-- Multiverse Leader Spotlight Banner -->
+                <div class="leader-spotlight-card" id="leader-spotlight-card">
+                    <div class="leader-crown-glow">👑</div>
+                    <div class="leader-spotlight-info">
+                        <div class="leader-subtitle">CURRENT MULTIVERSE LEADER</div>
+                        <h2 class="leader-name" id="leader-top-name">CHAMPION</h2>
+                        <div class="leader-stats-row">
+                            <span class="leader-stat-badge win-badge">🏆 <span id="leader-top-score">0</span> Cards Won</span>
+                            <span class="leader-stat-badge deck-badge">🎴 <span id="leader-top-deck">0</span> In Deck</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leaderboard Standings Section -->
+                <div class="lb-standings-section">
+                    <div class="lb-standings-header">
+                        <span class="lb-header-title">⚡ BATTLE STANDINGS</span>
+                        <div class="lb-table-heading-row">
+                            <span>RANK &amp; PLAYER</span>
+                            <span>WON / DECK</span>
+                        </div>
+                    </div>
+                    <div id="lb-players-list" class="lb-players-list">
+                        <!-- Dynamic Player Rank Items -->
+                    </div>
+                </div>
+
+                <!-- Footer with Countdown, Replay & Continue -->
+                <div class="lb-cinema-footer">
+                    <div class="lb-countdown-text">
+                        Resuming battle in <span id="lb-countdown-num" class="highlight">10</span>s...
+                    </div>
+                    <div class="lb-footer-buttons">
+                        <button id="btn-replay-video" class="btn secondary-btn small-btn" type="button">
+                            🎬 Replay Video
+                        </button>
+                        <button id="btn-resume-battle" class="btn glow-btn lb-resume-btn" type="button">
+                            Continue to Round <span id="lb-next-round-num">11</span> ➔
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="game-over-screen" class="cinema-overlay hidden">
+        <!-- Video plays fullscreen as background -->
+        <div class="cinema-video-wrapper">
+            <video id="gameover-video" class="cinema-video" playsinline muted preload="metadata">
+                <source id="gameover-video-source" src="" type="video/mp4">
+            </video>
+            <div class="cinema-vignette"></div>
+            <div class="cinema-glow-border"></div>
+        </div>
+        <!-- Winner info shown on top after video ends -->
+        <div id="gameover-result" class="gameover-result hidden">
+            <div class="gameover-content glass-card">
+                <div class="gameover-crown">👑</div>
+                <h1 class="game-title">Game Over</h1>
+                <h3 class="subtitle"><span id="game-winner" class="highlight"></span></h3>
+                <p id="gameover-reason" class="gameover-reason-text">Winner declared!</p>
+                <a href="/" class="btn primary-btn" id="btn-back-lobby">Back to Lobby</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FULLSCREEN LANDSCAPE TEASER SHOWCASE (For unreleased decks: Avengers & Cricket) -->
+    <div id="deck-teaser-modal" class="fullscreen-teaser-overlay hidden" aria-modal="true" role="dialog">
+        
+        <!-- Fullscreen Landscape Background Slideshow Track -->
+        <div class="fullscreen-slides-track" id="teaser-slides-track">
+            <!-- Fullscreen Landscape Image Slides injected here -->
+        </div>
+
+        <!-- Fullscreen Vignette / Subtle Gradient for Depth -->
+        <div class="fullscreen-teaser-vignette"></div>
+
+        <!-- Top Right Close Button -->
+        <button id="btn-close-teaser" class="fullscreen-close-btn" title="Close Preview (Esc)" aria-label="Close Preview">✕</button>
+
+        <!-- Top Deck Title Indicator -->
+        <div class="fullscreen-deck-indicator" id="teaser-deck-indicator">
+            <span class="fs-indicator-badge" id="teaser-badge">⚡ AVENGERS</span>
+            <span class="fs-indicator-name" id="teaser-title">Avengers Multiverse</span>
+        </div>
+
+        <!-- Center Transparent Blur Glassmorphism Message Box -->
+        <div class="fullscreen-center-blur-card">
+            <div class="fs-blur-icon">🚀</div>
+            <div class="fs-blur-tag">COMING SOON</div>
+            <h2 class="fs-blur-message">will be released on 1.1.2027 stay tuned</h2>
+            <div class="fs-blur-date-pill">📅 Launching on 01 . 01 . 2027</div>
+            <button id="btn-teaser-back" class="btn glow-btn fs-blur-action-btn">⚡ Got It • Return to Ben 10</button>
+        </div>
+
+        <!-- Bottom Carousel Dots / Indicator for continuous looping decks -->
+        <div class="fullscreen-dots" id="teaser-dots"></div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

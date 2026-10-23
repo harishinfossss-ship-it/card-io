@@ -1,0 +1,64 @@
+﻿=== Image Verification ===
+
+OK: 59
+  Alien X: alien_x.png
+  Clockwork: clockwork.png
+  Ultimate Way Big: ultimate_way_big.png
+  Way Big: way_big.png
+  Gravattack: gravattack.png
+  Feedback: feedback.png
+  Ultimate Echo Echo: ultimate_echo_echo.png
+  Ultimate Humungousaur: ultimate_humungousaur.png
+  NRG: nrg.png
+  Ultimate Swampfire: ultimate_swampfire.png
+  Chromastone: chromastone.png
+  Ghostfreak: ghostfreak.png
+  Big Chill: big_chill.png
+  Jetray: jetray.png
+  Diamondhead: diamondhead.jpeg
+  Ultimate Big Chill: ultimate_big_chill.png
+  Ultimate Spider-Monkey: ultimate_spider_monkey.png
+  Eatle: eatle.png
+  Swampfire: swampfire.png
+  AmpFibian: ampfibian.png
+  Heatblast: heatblast.png
+  Four Arms: four_arms.png
+  Rath: rath.png
+  Ultimate Cannonbolt: ultimate_cannonbolt.png
+  Armodrillo: armodrillo.png
+  Upchuck: upchuck.png
+  Pesky Dust: pesky_dust.png
+  Lodestar: lodestar.png
+  Terraspin: terraspin.png
+  Shocksquatch: shocksquatch.png
+  Cannonbolt: cannonbolt.png
+  Echo Echo: echo_echo.png
+  Humungousaur: humungousaur.png
+  Frankenstrike: frankenstrike.png
+  Goop: goop.png
+  Upgrade: upgrade.png
+  XLR8: xlr8.png
+  Ultimate Wildmutt: ultimate_wildmutt.png
+  Bloxx: bloxx.png
+  Brainstorm: brainstorm.png
+  Jury Rigg: jury_rigg.png
+  Ball Weevil: ball_weevil.png
+  Wildvine: wildvine.png
+  Blitzwolfer: blitzwolfer.png
+  Water Hazard: water_hazard.png
+  Arctiguana: arctiguana.png
+  Crashhopper: crashhopper.png
+  Wildmutt: wildmutt.png
+  Snare-oh: snare_oh.png
+  Spider-Monkey: spider_monkey.png
+  Stinkfly: stinkfly.png
+  Fasttrack: fasttrack.png
+  ChamAlien: chamalien.png
+  Nanomech: nanomech.png
+  Ditto: ditto.png
+  Eye Guy: eye_guy.png
+  Grey Matter: grey_matter.png
+  Ripjaws: ripjaws.png
+  The Worst: the_worst.png
+
+ISSUES: 0

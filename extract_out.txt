@@ -1,0 +1,247 @@
+﻿Row -> Image stem mapping:
+  Row 2: image1
+  Row 3: image2
+  Row 4: image3
+  Row 5: image4
+  Row 6: image5
+  Row 7: image6
+  Row 8: image7
+  Row 9: image8
+  Row 10: image9
+  Row 11: image11
+  Row 12: image12
+  Row 13: image13
+  Row 14: image14
+  Row 15: image15
+  Row 16: image60
+  Row 17: image16
+  Row 18: image17
+  Row 19: image18
+  Row 20: image19
+  Row 21: image20
+  Row 22: image21
+  Row 23: image22
+  Row 24: image23
+  Row 25: image24
+  Row 26: image25
+  Row 27: image26
+  Row 28: image27
+  Row 29: image28
+  Row 30: image29
+  Row 31: image30
+  Row 32: image31
+  Row 33: image32
+  Row 34: image33
+  Row 35: image34
+  Row 36: image35
+  Row 37: image36
+  Row 38: image37
+  Row 39: image38
+  Row 40: image39
+  Row 41: image40
+  Row 42: image41
+  Row 43: image42
+  Row 44: image43
+  Row 45: image44
+  Row 46: image45
+  Row 47: image46
+  Row 48: image47
+  Row 49: image48
+  Row 50: image49
+  Row 51: image50
+  Row 52: image51
+  Row 53: image52
+  Row 54: image53
+  Row 55: image54
+  Row 56: image55
+  Row 57: image56
+  Row 58: image57
+  Row 59: image58
+  Row 60: image59
+
+Card row -> Name mapping:
+  Row 2: Alien X
+  Row 3: Clockwork
+  Row 4: Ultimate Way Big
+  Row 5: Way Big
+  Row 6: Gravattack
+  Row 7: Feedback
+  Row 8: Ultimate Echo Echo
+  Row 9: Ultimate Humungousaur
+  Row 10: NRG
+  Row 11: Ultimate Swampfire
+  Row 12: Chromastone
+  Row 13: Ghostfreak
+  Row 14: Big Chill
+  Row 15: Jetray
+  Row 16: Diamondhead
+  Row 17: Ultimate Big Chill
+  Row 18: Ultimate Spider-Monkey
+  Row 19: Eatle
+  Row 20: Swampfire
+  Row 21: AmpFibian
+  Row 22: Heatblast
+  Row 23: Four Arms
+  Row 24: Rath
+  Row 25: Ultimate Cannonbolt
+  Row 26: Armodrillo
+  Row 27: Upchuck
+  Row 28: Pesky Dust
+  Row 29: Lodestar
+  Row 30: Terraspin
+  Row 31: Shocksquatch
+  Row 32: Cannonbolt
+  Row 33: Echo Echo
+  Row 34: Humungousaur
+  Row 35: Frankenstrike
+  Row 36: Goop
+  Row 37: Upgrade
+  Row 38: XLR8
+  Row 39: Ultimate Wildmutt
+  Row 40: Bloxx
+  Row 41: Brainstorm
+  Row 42: Jury Rigg
+  Row 43: Ball Weevil
+  Row 44: Wildvine
+  Row 45: Blitzwolfer
+  Row 46: Water Hazard
+  Row 47: Arctiguana
+  Row 48: Crashhopper
+  Row 49: Wildmutt
+  Row 50: Snare-oh
+  Row 51: Spider-Monkey
+  Row 52: Stinkfly
+  Row 53: Fasttrack
+  Row 54: ChamAlien
+  Row 55: Nanomech
+  Row 56: Ditto
+  Row 57: Eye Guy
+  Row 58: Grey Matter
+  Row 59: Ripjaws
+  Row 60: The Worst
+
+
+=== EXTRACTING IMAGES ===
+  OK: Row 2 | Alien X -> alien_x.png | image1 | 44 KB
+  OK: Row 3 | Clockwork -> clockwork.png | image2 | 86 KB
+  OK: Row 4 | Ultimate Way Big -> ultimate_way_big.png | image3 | 62 KB
+  OK: Row 5 | Way Big -> way_big.png | image4 | 48 KB
+  OK: Row 6 | Gravattack -> gravattack.png | image5 | 63 KB
+  OK: Row 7 | Feedback -> feedback.png | image6 | 59 KB
+  OK: Row 8 | Ultimate Echo Echo -> ultimate_echo_echo.png | image7 | 67 KB
+  OK: Row 9 | Ultimate Humungousaur -> ultimate_humungousaur.png | image8 | 85 KB
+  OK: Row 10 | NRG -> nrg.png | image9 | 32 KB
+  OK: Row 11 | Ultimate Swampfire -> ultimate_swampfire.png | image11 | 77 KB
+  OK: Row 12 | Chromastone -> chromastone.png | image12 | 47 KB
+  OK: Row 13 | Ghostfreak -> ghostfreak.png | image13 | 98 KB
+  OK: Row 14 | Big Chill -> big_chill.png | image14 | 34 KB
+  OK: Row 15 | Jetray -> jetray.png | image15 | 45 KB
+  OK: Row 16 | Diamondhead -> diamondhead.jpeg | image60 | 47 KB
+  OK: Row 17 | Ultimate Big Chill -> ultimate_big_chill.png | image16 | 37 KB
+  OK: Row 18 | Ultimate Spider-Monkey -> ultimate_spider_monkey.png | image17 | 39 KB
+  OK: Row 19 | Eatle -> eatle.png | image18 | 57 KB
+  OK: Row 20 | Swampfire -> swampfire.png | image19 | 96 KB
+  OK: Row 21 | AmpFibian -> ampfibian.png | image20 | 49 KB
+  OK: Row 22 | Heatblast -> heatblast.png | image21 | 47 KB
+  OK: Row 23 | Four Arms -> four_arms.png | image22 | 62 KB
+  OK: Row 24 | Rath -> rath.png | image23 | 90 KB
+  OK: Row 25 | Ultimate Cannonbolt -> ultimate_cannonbolt.png | image24 | 28 KB
+  OK: Row 26 | Armodrillo -> armodrillo.png | image25 | 41 KB
+  OK: Row 27 | Upchuck -> upchuck.png | image26 | 50 KB
+  OK: Row 28 | Pesky Dust -> pesky_dust.png | image27 | 175 KB
+  OK: Row 29 | Lodestar -> lodestar.png | image28 | 66 KB
+  OK: Row 30 | Terraspin -> terraspin.png | image29 | 40 KB
+  OK: Row 31 | Shocksquatch -> shocksquatch.png | image30 | 58 KB
+  OK: Row 32 | Cannonbolt -> cannonbolt.png | image31 | 45 KB
+  OK: Row 33 | Echo Echo -> echo_echo.png | image32 | 44 KB
+  OK: Row 34 | Humungousaur -> humungousaur.png | image33 | 61 KB
+  OK: Row 35 | Frankenstrike -> frankenstrike.png | image34 | 93 KB
+  OK: Row 36 | Goop -> goop.png | image35 | 48 KB
+  OK: Row 37 | Upgrade -> upgrade.png | image36 | 70 KB
+  OK: Row 38 | XLR8 -> xlr8.png | image37 | 34 KB
+  OK: Row 39 | Ultimate Wildmutt -> ultimate_wildmutt.png | image38 | 54 KB
+  OK: Row 40 | Bloxx -> bloxx.png | image39 | 49 KB
+  OK: Row 41 | Brainstorm -> brainstorm.png | image40 | 51 KB
+  OK: Row 42 | Jury Rigg -> jury_rigg.png | image41 | 61 KB
+  OK: Row 43 | Ball Weevil -> ball_weevil.png | image42 | 44 KB
+  OK: Row 44 | Wildvine -> wildvine.png | image43 | 72 KB
+  OK: Row 45 | Blitzwolfer -> blitzwolfer.png | image44 | 29 KB
+  OK: Row 46 | Water Hazard -> water_hazard.png | image45 | 52 KB
+  OK: Row 47 | Arctiguana -> arctiguana.png | image46 | 66 KB
+  OK: Row 48 | Crashhopper -> crashhopper.png | image47 | 78 KB
+  OK: Row 49 | Wildmutt -> wildmutt.png | image48 | 58 KB
+  OK: Row 50 | Snare-oh -> snare_oh.png | image49 | 100 KB
+  OK: Row 51 | Spider-Monkey -> spider_monkey.png | image50 | 55 KB
+  OK: Row 52 | Stinkfly -> stinkfly.png | image51 | 37 KB
+  OK: Row 53 | Fasttrack -> fasttrack.png | image52 | 50 KB
+  OK: Row 54 | ChamAlien -> chamalien.png | image53 | 67 KB
+  OK: Row 55 | Nanomech -> nanomech.png | image54 | 82 KB
+  OK: Row 56 | Ditto -> ditto.png | image55 | 77 KB
+  OK: Row 57 | Eye Guy -> eye_guy.png | image56 | 109 KB
+  OK: Row 58 | Grey Matter -> grey_matter.png | image57 | 58 KB
+  OK: Row 59 | Ripjaws -> ripjaws.png | image58 | 79 KB
+  OK: Row 60 | The Worst -> the_worst.png | image59 | 71 KB
+
+Done! Extracted: 59, Skipped: 0
+Images saved to: d:\cardio\public\images\aliens
+
+=== FINAL IMAGE MAP (for reference) ===
+  "Alien X": "/images/aliens/alien_x.png"  [image1]
+  "Clockwork": "/images/aliens/clockwork.png"  [image2]
+  "Ultimate Way Big": "/images/aliens/ultimate_way_big.png"  [image3]
+  "Way Big": "/images/aliens/way_big.png"  [image4]
+  "Gravattack": "/images/aliens/gravattack.png"  [image5]
+  "Feedback": "/images/aliens/feedback.png"  [image6]
+  "Ultimate Echo Echo": "/images/aliens/ultimate_echo_echo.png"  [image7]
+  "Ultimate Humungousaur": "/images/aliens/ultimate_humungousaur.png"  [image8]
+  "NRG": "/images/aliens/nrg.png"  [image9]
+  "Ultimate Swampfire": "/images/aliens/ultimate_swampfire.png"  [image11]
+  "Chromastone": "/images/aliens/chromastone.png"  [image12]
+  "Ghostfreak": "/images/aliens/ghostfreak.png"  [image13]
+  "Big Chill": "/images/aliens/big_chill.png"  [image14]
+  "Jetray": "/images/aliens/jetray.png"  [image15]
+  "Diamondhead": "/images/aliens/diamondhead.png"  [image60]
+  "Ultimate Big Chill": "/images/aliens/ultimate_big_chill.png"  [image16]
+  "Ultimate Spider-Monkey": "/images/aliens/ultimate_spider_monkey.png"  [image17]
+  "Eatle": "/images/aliens/eatle.png"  [image18]
+  "Swampfire": "/images/aliens/swampfire.png"  [image19]
+  "AmpFibian": "/images/aliens/ampfibian.png"  [image20]
+  "Heatblast": "/images/aliens/heatblast.png"  [image21]
+  "Four Arms": "/images/aliens/four_arms.png"  [image22]
+  "Rath": "/images/aliens/rath.png"  [image23]
+  "Ultimate Cannonbolt": "/images/aliens/ultimate_cannonbolt.png"  [image24]
+  "Armodrillo": "/images/aliens/armodrillo.png"  [image25]
+  "Upchuck": "/images/aliens/upchuck.png"  [image26]
+  "Pesky Dust": "/images/aliens/pesky_dust.png"  [image27]
+  "Lodestar": "/images/aliens/lodestar.png"  [image28]
+  "Terraspin": "/images/aliens/terraspin.png"  [image29]
+  "Shocksquatch": "/images/aliens/shocksquatch.png"  [image30]
+  "Cannonbolt": "/images/aliens/cannonbolt.png"  [image31]
+  "Echo Echo": "/images/aliens/echo_echo.png"  [image32]
+  "Humungousaur": "/images/aliens/humungousaur.png"  [image33]
+  "Frankenstrike": "/images/aliens/frankenstrike.png"  [image34]
+  "Goop": "/images/aliens/goop.png"  [image35]
+  "Upgrade": "/images/aliens/upgrade.png"  [image36]
+  "XLR8": "/images/aliens/xlr8.png"  [image37]
+  "Ultimate Wildmutt": "/images/aliens/ultimate_wildmutt.png"  [image38]
+  "Bloxx": "/images/aliens/bloxx.png"  [image39]
+  "Brainstorm": "/images/aliens/brainstorm.png"  [image40]
+  "Jury Rigg": "/images/aliens/jury_rigg.png"  [image41]
+  "Ball Weevil": "/images/aliens/ball_weevil.png"  [image42]
+  "Wildvine": "/images/aliens/wildvine.png"  [image43]
+  "Blitzwolfer": "/images/aliens/blitzwolfer.png"  [image44]
+  "Water Hazard": "/images/aliens/water_hazard.png"  [image45]
+  "Arctiguana": "/images/aliens/arctiguana.png"  [image46]
+  "Crashhopper": "/images/aliens/crashhopper.png"  [image47]
+  "Wildmutt": "/images/aliens/wildmutt.png"  [image48]
+  "Snare-oh": "/images/aliens/snare_oh.png"  [image49]
+  "Spider-Monkey": "/images/aliens/spider_monkey.png"  [image50]
+  "Stinkfly": "/images/aliens/stinkfly.png"  [image51]
+  "Fasttrack": "/images/aliens/fasttrack.png"  [image52]
+  "ChamAlien": "/images/aliens/chamalien.png"  [image53]
+  "Nanomech": "/images/aliens/nanomech.png"  [image54]
+  "Ditto": "/images/aliens/ditto.png"  [image55]
+  "Eye Guy": "/images/aliens/eye_guy.png"  [image56]
+  "Grey Matter": "/images/aliens/grey_matter.png"  [image57]
+  "Ripjaws": "/images/aliens/ripjaws.png"  [image58]
+  "The Worst": "/images/aliens/the_worst.png"  [image59]

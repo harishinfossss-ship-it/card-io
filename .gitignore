@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.bak
+game.db-shm
+game.db-wal
+.env
+.venv
+env/
+venv/

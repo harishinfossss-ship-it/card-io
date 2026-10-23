@@ -1,0 +1,202 @@
+﻿Image -> Row mapping:
+  image1: row 2
+  image2: row 3
+  image3: row 4
+  image4: row 5
+  image5: row 6
+  image6: row 7
+  image7: row 8
+  image8: row 9
+  image9: row 10
+  image10: row 10
+  image11: row 11
+  image12: row 12
+  image13: row 13
+  image14: row 14
+  image15: row 15
+  image16: row 17
+  image17: row 18
+  image18: row 19
+  image19: row 20
+  image20: row 21
+  image21: row 22
+  image22: row 23
+  image23: row 24
+  image24: row 25
+  image25: row 26
+  image26: row 27
+  image27: row 28
+  image28: row 29
+  image29: row 30
+  image30: row 31
+  image31: row 32
+  image32: row 33
+  image33: row 34
+  image34: row 35
+  image35: row 36
+  image36: row 37
+  image37: row 38
+  image38: row 39
+  image39: row 40
+  image40: row 41
+  image41: row 42
+  image42: row 43
+  image43: row 44
+  image44: row 45
+  image45: row 46
+  image46: row 47
+  image47: row 48
+  image48: row 49
+  image49: row 50
+  image50: row 51
+  image51: row 52
+  image52: row 53
+  image53: row 54
+  image54: row 55
+  image55: row 56
+  image56: row 57
+  image57: row 58
+  image58: row 59
+  image59: row 60
+  image60: row 16
+
+Sheets: ['59 Card Master', 'How to Use', 'Image Mapping Audit', 'Web Verification']
+  Sheet '59 Card Master': first col vals = ['Rank', 1, 2, 3, 4]
+
+Using sheet: 59 Card Master
+Max rows: 60, Max cols: 18
+
+All rows with content in first few columns:
+  Row   1: ['Rank', 'Image', 'Image Source', 'Series', 'Alien Name']
+  Row   2: [1, 'Embedded', 'DOCX image(s): 28', 'Alien Force', 'Alien X']
+  Row   3: [2, 'Embedded', 'DOCX image(s): 41', 'Ultimate Alien', 'Clockwork']
+  Row   4: [3, 'Embedded', 'DOCX image(s): 51', 'Ultimate Alien', 'Ultimate Way Big']
+  Row   5: [4, 'Embedded', 'DOCX image(s): 18', 'Original Series', 'Way Big']
+  Row   6: [5, 'Embedded', 'DOCX image(s): 54', 'Omniverse', 'Gravattack']
+  Row   7: [6, 'Embedded', 'DOCX image(s): 52', 'Omniverse', 'Feedback']
+  Row   8: [7, 'Embedded', 'DOCX image(s): 49', 'Ultimate Alien', 'Ultimate Echo Echo']
+  Row   9: [8, 'Embedded', 'DOCX image(s): 44', 'Ultimate Alien', 'Ultimate Humungousaur']
+  Row  10: [9, 'Embedded', 'DOCX image(s): 36, 37', 'Ultimate Alien', 'NRG']
+  Row  11: [10, 'Embedded', 'DOCX image(s): 45', 'Ultimate Alien', 'Ultimate Swampfire']
+  Row  12: [11, 'Embedded', 'DOCX image(s): 24', 'Alien Force', 'Chromastone']
+  Row  13: [12, 'Embedded', 'DOCX image(s): 9', 'Original Series', 'Ghostfreak']
+  Row  14: [13, 'Embedded', 'DOCX image(s): 23', 'Alien Force', 'Big Chill']
+  Row  15: [14, 'Embedded', 'DOCX image(s): 22', 'Alien Force', 'Jetray']
+  Row  16: [15, None, 'image supplied', 'Original Series', 'Diamondhead']
+  Row  17: [16, 'Embedded', 'DOCX image(s): 47', 'Ultimate Alien', 'Ultimate Big Chill']
+  Row  18: [17, 'Embedded', 'DOCX image(s): 46', 'Ultimate Alien', 'Ultimate Spider-Monkey']
+  Row  19: [18, 'Embedded', 'DOCX image(s): 40', 'Ultimate Alien', 'Eatle']
+  Row  20: [19, 'Embedded', 'DOCX image(s): 19', 'Alien Force', 'Swampfire']
+  Row  21: [20, 'Embedded', 'DOCX image(s): 33', 'Ultimate Alien', 'AmpFibian']
+  Row  22: [21, 'Embedded', 'DOCX image(s): 1', 'Original Series', 'Heatblast']
+  Row  23: [22, 'Embedded', 'DOCX image(s): 5', 'Original Series', 'Four Arms']
+  Row  24: [23, 'Embedded', 'DOCX image(s): 30', 'Alien Force', 'Rath']
+  Row  25: [24, 'Embedded', 'DOCX image(s): 48', 'Ultimate Alien', 'Ultimate Cannonbolt']
+  Row  26: [25, 'Embedded', 'DOCX image(s): 34', 'Ultimate Alien', 'Armodrillo']
+  Row  27: [26, 'Embedded', 'DOCX image(s): 15', 'Original Series', 'Upchuck']
+  Row  28: [27, 'Embedded', 'DOCX image(s): 58', 'Omniverse', 'Pesky Dust']
+  Row  29: [28, 'Embedded', 'DOCX image(s): 29', 'Alien Force', 'Lodestar']
+  Row  30: [29, 'Embedded', 'DOCX image(s): 35', 'Ultimate Alien', 'Terraspin']
+  Row  31: [30, 'Embedded', 'DOCX image(s): 43', 'Ultimate Alien', 'Shocksquatch']
+  Row  32: [31, 'Embedded', 'DOCX image(s): 10', 'Original Series', 'Cannonbolt']
+  Row  33: [32, 'Embedded', 'DOCX image(s): 20', 'Alien Force', 'Echo Echo']
+  Row  34: [33, 'Embedded', 'DOCX image(s): 21', 'Alien Force', 'Humungousaur']
+  Row  35: [34, 'Embedded', 'DOCX image(s): 14', 'Original Series', 'Frankenstrike']
+  Row  36: [35, 'Embedded', 'DOCX image(s): 27', 'Alien Force', 'Goop']
+  Row  37: [36, 'Embedded', 'DOCX image(s): 8', 'Original Series', 'Upgrade']
+  Row  38: [37, 'Embedded', 'DOCX image(s): 3', 'Original Series', 'XLR8']
+  Row  39: [38, 'Embedded', 'DOCX image(s): 50', 'Ultimate Alien', 'Ultimate Wildmutt']
+  Row  40: [39, 'Embedded', 'DOCX image(s): 53', 'Omniverse', 'Bloxx']
+  Row  41: [40, 'Embedded', 'DOCX image(s): 25', 'Alien Force', 'Brainstorm']
+  Row  42: [41, 'Embedded', 'DOCX image(s): 42', 'Ultimate Alien', 'Jury Rigg']
+  Row  43: [42, 'Embedded', 'DOCX image(s): 57', 'Omniverse', 'Ball Weevil']
+  Row  44: [43, 'Embedded', 'DOCX image(s): 11', 'Original Series', 'Wildvine']
+  Row  45: [44, 'Embedded', 'DOCX image(s): 12', 'Original Series', 'Blitzwolfer']
+  Row  46: [45, 'Embedded', 'DOCX image(s): 32', 'Ultimate Alien', 'Water Hazard']
+  Row  47: [46, 'Embedded', 'DOCX image(s): 56', 'Original Series', 'Arctiguana']
+  Row  48: [47, 'Embedded', 'DOCX image(s): 55', 'Omniverse', 'Crashhopper']
+  Row  49: [48, 'Embedded', 'DOCX image(s): 2', 'Original Series', 'Wildmutt']
+  Row  50: [49, 'Embedded', 'DOCX image(s): 13', 'Original Series', 'Snare-oh']
+  Row  51: [50, 'Embedded', 'DOCX image(s): 26', 'Alien Force', 'Spider-Monkey']
+  Row  52: [51, 'Embedded', 'DOCX image(s): 6', 'Original Series', 'Stinkfly']
+  Row  53: [52, 'Embedded', 'DOCX image(s): 38', 'Ultimate Alien', 'Fasttrack']
+  Row  54: [53, 'Embedded', 'DOCX image(s): 39', 'Ultimate Alien', 'ChamAlien']
+  Row  55: [54, 'Embedded', 'DOCX image(s): 31', 'Alien Force', 'Nanomech']
+  Row  56: [55, 'Embedded', 'DOCX image(s): 16', 'Original Series', 'Ditto']
+  Row  57: [56, 'Embedded', 'DOCX image(s): 17', 'Original Series', 'Eye Guy']
+  Row  58: [57, 'Embedded', 'DOCX image(s): 4', 'Original Series', 'Grey Matter']
+  Row  59: [58, 'Embedded', 'DOCX image(s): 7', 'Original Series', 'Ripjaws']
+  Row  60: [59, 'Embedded', 'DOCX image(s): 59', 'Omniverse', 'The Worst']
+
+
+=== CORRECT MAPPING (name -> image) ===
+Row -> Name:
+  Row   1: Rank
+
+Image placement vs Name placement:
+  image1 (anchored row 2) -> name row 1: 'Rank'
+  image2 (anchored row 3) -> name row 1: 'Rank'
+  image3 (anchored row 4) -> name row 1: 'Rank'
+  image4 (anchored row 5) -> name row 1: 'Rank'
+  image5 (anchored row 6) -> name row 1: 'Rank'
+  image6 (anchored row 7) -> name row 1: 'Rank'
+  image7 (anchored row 8) -> name row 1: 'Rank'
+  image8 (anchored row 9) -> name row 1: 'Rank'
+  image9 (anchored row 10) -> name row 1: 'Rank'
+  image10 (anchored row 10) -> name row 1: 'Rank'
+  image11 (anchored row 11) -> name row 1: 'Rank'
+  image12 (anchored row 12) -> name row 1: 'Rank'
+  image13 (anchored row 13) -> name row 1: 'Rank'
+  image14 (anchored row 14) -> name row 1: 'Rank'
+  image15 (anchored row 15) -> name row 1: 'Rank'
+  image60 (anchored row 16) -> name row 1: 'Rank'
+  image16 (anchored row 17) -> name row 1: 'Rank'
+  image17 (anchored row 18) -> name row 1: 'Rank'
+  image18 (anchored row 19) -> name row 1: 'Rank'
+  image19 (anchored row 20) -> name row 1: 'Rank'
+  image20 (anchored row 21) -> name row 1: 'Rank'
+  image21 (anchored row 22) -> name row 1: 'Rank'
+  image22 (anchored row 23) -> name row 1: 'Rank'
+  image23 (anchored row 24) -> name row 1: 'Rank'
+  image24 (anchored row 25) -> name row 1: 'Rank'
+  image25 (anchored row 26) -> name row 1: 'Rank'
+  image26 (anchored row 27) -> name row 1: 'Rank'
+  image27 (anchored row 28) -> name row 1: 'Rank'
+  image28 (anchored row 29) -> name row 1: 'Rank'
+  image29 (anchored row 30) -> name row 1: 'Rank'
+  image30 (anchored row 31) -> name row 1: 'Rank'
+  image31 (anchored row 32) -> name row 1: 'Rank'
+  image32 (anchored row 33) -> name row 1: 'Rank'
+  image33 (anchored row 34) -> name row 1: 'Rank'
+  image34 (anchored row 35) -> name row 1: 'Rank'
+  image35 (anchored row 36) -> name row 1: 'Rank'
+  image36 (anchored row 37) -> name row 1: 'Rank'
+  image37 (anchored row 38) -> name row 1: 'Rank'
+  image38 (anchored row 39) -> name row 1: 'Rank'
+  image39 (anchored row 40) -> name row 1: 'Rank'
+  image40 (anchored row 41) -> name row 1: 'Rank'
+  image41 (anchored row 42) -> name row 1: 'Rank'
+  image42 (anchored row 43) -> name row 1: 'Rank'
+  image43 (anchored row 44) -> name row 1: 'Rank'
+  image44 (anchored row 45) -> name row 1: 'Rank'
+  image45 (anchored row 46) -> name row 1: 'Rank'
+  image46 (anchored row 47) -> name row 1: 'Rank'
+  image47 (anchored row 48) -> name row 1: 'Rank'
+  image48 (anchored row 49) -> name row 1: 'Rank'
+  image49 (anchored row 50) -> name row 1: 'Rank'
+  image50 (anchored row 51) -> name row 1: 'Rank'
+  image51 (anchored row 52) -> name row 1: 'Rank'
+  image52 (anchored row 53) -> name row 1: 'Rank'
+  image53 (anchored row 54) -> name row 1: 'Rank'
+  image54 (anchored row 55) -> name row 1: 'Rank'
+  image55 (anchored row 56) -> name row 1: 'Rank'
+  image56 (anchored row 57) -> name row 1: 'Rank'
+  image57 (anchored row 58) -> name row 1: 'Rank'
+  image58 (anchored row 59) -> name row 1: 'Rank'
+  image59 (anchored row 60) -> name row 1: 'Rank'
+
+
+=== FINAL CORRECTED IMAGE_MAP ===
+IMAGE_MAP = {
+    "Rank": "image59",
+}
