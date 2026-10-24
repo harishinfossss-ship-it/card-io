@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Battle: Digital Card Game</title>
     <meta name="description" content="Nexus Battle — a real-time multiplayer card battle game. Choose your hero, battle your friends and become the ultimate card master!">
+    <meta name="author" content="Vexolyyn Studios">
+    <meta name="publisher" content="Vexolyyn Studios">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Orbitron:wght@400;700;900&display=swap"
         rel="stylesheet">
@@ -61,6 +63,12 @@
 
     <!-- LOBBY WRAPPER -->
     <div id="lobby-wrapper" class="lobby-container glass-card">
+        <div class="lobby-studio-banner">
+            <div class="lobby-studio-badge">
+                <img src="/images/vexolyyn_logo.png" alt="Vexolyyn Studios" class="lobby-studio-img">
+                <span class="lobby-studio-sub">Vexolyyn Studios</span>
+            </div>
+        </div>
         <h1 class="game-title">Nexus Battle</h1>
         <p class="subtitle">Enter the Multiverse of Cards</p>
 
@@ -239,6 +247,12 @@
             <p id="lobby-status-msg" class="status-text">Waiting for host to start...</p>
             <button id="btn-start-game" class="btn glow-btn disabled" disabled>Start Game</button>
         </div>
+
+        <div class="lobby-footer-credit">
+            <span>A Game By</span>
+            <img src="/images/vexolyyn_logo.png" alt="Vexolyyn Studios" class="lobby-footer-img">
+            <span>© 2026 Vexolyyn Studios. All rights reserved.</span>
+        </div>
     </div>
 
     <!-- SHUFFLE ANIMATION OVERLAY -->
@@ -262,12 +276,19 @@
                 <h4 id="turn-indicator" class="turn-indicator">Waiting for others...</h4>
             </div>
 
-            <!-- IN-GAME HUD ACTIVE MODE & RULES BUTTON -->
-            <button id="btn-game-rules-modal" class="game-mode-hud-pill" title="Click to view full match rules">
-                <span class="hud-mode-icon">⚔️</span>
-                <span class="hud-mode-text" id="hud-mode-text">50 Rounds Mode</span>
-                <span class="hud-rules-btn-tag">ℹ️ Rules</span>
-            </button>
+            <div class="hud-center-group">
+                <div class="hud-studio-pill" title="Nexus Battle by Vexolyyn Studios">
+                    <img src="/images/vexolyyn_logo.png" alt="Vexolyyn Studios" class="hud-studio-img">
+                    <span class="hud-studio-text">VEXOLYYN</span>
+                </div>
+
+                <!-- IN-GAME HUD ACTIVE MODE & RULES BUTTON -->
+                <button id="btn-game-rules-modal" class="game-mode-hud-pill" title="Click to view full match rules">
+                    <span class="hud-mode-icon">⚔️</span>
+                    <span class="hud-mode-text" id="hud-mode-text">50 Rounds Mode</span>
+                    <span class="hud-rules-btn-tag">ℹ️ Rules</span>
+                </button>
+            </div>
 
             <div class="round-counter-pill">
                 <span class="round-label">ROUND</span>
@@ -376,6 +397,15 @@
                                     <p id="card-ultimate-desc" class="ability-desc"></p>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- VEXOLYYN STUDIOS OFFICIAL CARD FOOTER -->
+                        <div class="card-studio-footer">
+                            <div class="card-studio-brand">
+                                <img src="/images/vexolyyn_logo.png" alt="Vexolyyn Studios" class="card-studio-img">
+                                <span class="card-studio-name">VEXOLYYN STUDIOS</span>
+                            </div>
+                            <span class="card-studio-edition">AUTHENTIC CCG · SERIES 01</span>
                         </div>
 
                     </div><!-- /card-bottom-section -->
@@ -556,6 +586,10 @@
                 </div>
                 <div class="rules-modal-footer">
                     <button id="btn-ack-rules" class="btn glow-btn small-btn">Got It! Return to Battle</button>
+                    <div class="rules-modal-studio">
+                        <img src="/images/vexolyyn_logo.png" alt="Vexolyyn Studios" class="rules-studio-img">
+                        <span>Original Card Game by Vexolyyn Studios</span>
+                    </div>
                 </div>
             </div>
         </div>
